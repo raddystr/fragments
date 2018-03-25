@@ -28,6 +28,6 @@ public class currencyconvertor {
         }
 
 
-        System.out.println(currency);
+        System.out.printf("%.2f %s", currency, outputValue);
     }
 }
