@@ -13,7 +13,7 @@ $s=$y+$x;
 if($s>$z){
 	last;
 }
-	print("\t$s");
+	print("\t$s\n");
 }
 
 
