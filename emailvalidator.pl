@@ -2,10 +2,10 @@
 use warnings;
 use strict;
 
-my $str = <STDIN>;
+my $email = <STDIN>;
 
-if ( $str =~ /^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$/ ) {
-	print "valid\n";
+if ( $email =~ /^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$/ ) {
+	print "Valid!\n";
 } else {
-	print "not valid\n";
+	print "Not valid!\n";
 }
