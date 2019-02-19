@@ -1,4 +1,4 @@
-#!/usr/local/bin/perl
+#!/usr/local/perl
 
 $number = <STDIN>;
 foreach(1 .. $number){
