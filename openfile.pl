@@ -1,9 +1,8 @@
-#!/usr/local/perl
+#!/usr/bin/perl
 
-$number = <STDIN>;
-foreach(1 .. $number){
-	if($number>$_){
-	$factorial+=$_;
-	print"$factorial";
+open(IN, "test") or die("Cannot open:$!");
+
+while($line=<IN>){
+	print("file:$line\n");
 }
-}
+close(IN) or die(Cannot close file:$!);
