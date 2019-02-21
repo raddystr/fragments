@@ -15,7 +15,6 @@ public class Main {
             int reminder = number%2;
             stack.push(reminder);
             number/=2;
-
         }
         while (!stack.isEmpty()) {
             System.out.print(stack.pop());
