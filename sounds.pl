@@ -1,4 +1,4 @@
-#!/usr/local/bin/perl
+#!/usr/bin/perl
 
  use warnings;
  use strict;
@@ -24,7 +24,6 @@
  	print("The $_ makes $hashRef->{$_}.\n");
  }
  
- #########
  sub returnReference { 
  	return \@array;
  }
