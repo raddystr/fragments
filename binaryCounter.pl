@@ -2,6 +2,7 @@
 
 chomp($decimal = <STDIN>);
 chomp($bit = <STDIN>);
+
 $match;
 $ans;
 $i = 1;
