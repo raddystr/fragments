@@ -13,7 +13,7 @@ while($decimal>0){
 	
 	if($remainder==$bit){
 	$match++;
-}
+	}
 }
 print"$match\n";
 
