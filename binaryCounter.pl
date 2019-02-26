@@ -5,7 +5,6 @@ $match;
 $ans;
 $i = 1;
 
-
 while($decimal>0){
 	$remainder = $decimal%2;
 	$ans = $ans+$remainder*$i;
