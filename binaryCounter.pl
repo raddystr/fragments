@@ -1,3 +1,4 @@
+#!/usr/bin/perl
 
 chomp($decimal = <STDIN>);
 chomp($bit = <STDIN>);
