@@ -9,7 +9,7 @@ sub sum{
 	my $count = $#numbers+1;
 	foreach $number(@numbers){
 		$sum +=$number;
-}
+	}
 	my $average = $sum/$count;
 		
 	foreach $number(@numbers){
@@ -23,4 +23,5 @@ sub sum{
 			
 		
 }		
+
 sum(1...1000)
