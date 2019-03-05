@@ -7,10 +7,10 @@ sub sum{
 	my $number;
 	my @numbers = @_;
 	my $count = $#numbers+1;
-		foreach $number(@numbers){
+	foreach $number(@numbers){
 		$sum +=$number;
 }
-		my $average = $sum/$count;
+	my $average = $sum/$count;
 		
 	foreach $number(@numbers){
 		if($number>$average){
