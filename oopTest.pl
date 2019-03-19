@@ -1,6 +1,6 @@
 use strict;
 use lib '/usr/home/raddy/projects/OOP/'; 
-use Quote;
+use OopTest1;
 
 my $phrase = "Baz";
 my $author = "Foo";
