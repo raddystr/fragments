@@ -1,5 +1,5 @@
 use strict;
-use lib '/usr/home/raddy/projects/OOP/'; 
+use lib 'PATH TO OopTest1.pm'; 
 use OopTest1;
 
 my $phrase = "Baz";
