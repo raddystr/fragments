@@ -12,7 +12,6 @@ $quote1->set_phrase($phrase);
 $quote1->set_author($author);
 $quote2->set_phrase($phrase);
 $quote2->set_author($author);
-
 $quote2->set_phrase("Some other phrase");
 $quote1->set_author("Some other phrase");
 
