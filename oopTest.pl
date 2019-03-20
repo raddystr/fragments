@@ -7,6 +7,7 @@ my $author = "Foo";
 my $approved = 0;
 
 my $quote = Quote->new();
+
 $quote->set_phrase($phrase);
 $quote->set_author($author);
 $quote->is_approved($approved);
