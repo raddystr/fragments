@@ -7,7 +7,6 @@ public class Main {
         Scanner console = new Scanner(System.in);
         int number = Integer.parseInt(console.nextLine());
         ArrayDeque<Integer>stack  = new ArrayDeque<>();
-
         while (number>0){
             int reminder = number%2;
             stack.push(reminder);
