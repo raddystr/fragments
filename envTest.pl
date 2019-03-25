@@ -1,6 +1,7 @@
-#!/usr/local/bin/perl
+#!/usr/bin/perl
 
 $userName =$ENV{'LOGNAME'};
+
 print "Hello, $userName!\n";
 
 foreach(sort keys %ENV){
