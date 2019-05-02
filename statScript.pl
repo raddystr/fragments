@@ -3,7 +3,6 @@ use strict;
 use warnings;
 use Data::Dumper;
 
-my $idcounter=0;
 #STATS VALUE
 my $sumsOT = {}; 
 my $sumsAT={};
