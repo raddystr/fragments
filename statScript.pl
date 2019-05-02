@@ -18,7 +18,6 @@ my $id_deposit_bingo={};
 #TOTALS
 my ($total_operations,  $total_amount);
 
-
 #FILE OPENING
 my $file = ( shift || 'data.csv' ); 
 
