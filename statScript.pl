@@ -22,7 +22,6 @@ my ($total_operations,  $total_amount);
 my $file = ( shift || 'data.csv' ); 
 
 #ARRAY WITH LABALED COLUMNS
-
 my @LABEL_NAMES = ();
 
 open(my $data, '<', $file) or die "I can't open it!\n";
