@@ -28,9 +28,7 @@ open(my $data, '<', $file) or die "I can't open it!\n";
 
 while (my $line = <$data>) {
 
-	
 	my $FIELDS_NAMES_VALUES = {} ;
-
 
 	#BETTER CHOMP  
 	$line =~ s/[\r\n]$//g;
