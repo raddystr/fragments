@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use DBI;
 
-my $dbh = DBI->connect('dbi:mysql:*','*','*') or die 'Problem with dbh!';
+my $dbh = DBI->connect('dbi:mysql:*','*','*') or die 'Problem with db!';
 my $sth;
 #my $sth =$dbh->prepare(q{INSERT INTO stat(id, operation_type, action_type, sums)VALUES(?,?,?,?)});
 
