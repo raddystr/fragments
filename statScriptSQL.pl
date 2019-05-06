@@ -81,6 +81,7 @@ $sth->execute;
 while(my @row=$sth->fetchrow_array){
 	print"@row\n"; 
 }
+
 print"\n";
 print"unique ids with DEPOSIT and bingo games:\n";
 $sth = $dbh->prepare("SELECT id FROM idDepBing GROUP BY id HAVING COUNT(id)>1");
