@@ -9,6 +9,7 @@ my $sth;
 
 my $file = (shift || 'data.csv');
 
+
 my @LABEL_NAMES=();
 
 open(my $data, '<', $file ) or die 'I can`t open it!\n';
