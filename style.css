@@ -10,9 +10,9 @@ td{
 }
 table{
 	border-collapse:collapse;
-	postion: absolute;
+	position: absolute;
 	left: 50%;
-	margin-left: 200px;
+	margin-left: -155px;
 	top: 50px; 
 }
 table tr:first-child td{
