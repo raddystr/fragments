@@ -41,10 +41,8 @@ while(1){
 			}
 
 	}	
-
 	last if open OUTPUT, ">$target";
 	print"I couldn't write on $target: $!\n";
-
 
 
 }
