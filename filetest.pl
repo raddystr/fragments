@@ -46,6 +46,6 @@ while(1){
 
 
 }
-print OUTPUT "Congartulations.\n";
+print OUTPUT "Congratulations.\n";
 print "Wrote to file $target\n"; 
 
