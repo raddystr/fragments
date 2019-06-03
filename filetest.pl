@@ -13,7 +13,7 @@ while(1){
 		}
 		if(-e $target ){
 			print"File already exusts. What should I do?\n";
-			print"(Enter 'r' to wriet to different name, ";
+			print"(Enter 'r' to write to a different name, ";
 			print "'o' to overwrite or\n";
 			print "'b' to back up to $target.old)\n";
 			my $choice = <STDIN>;
