@@ -10,7 +10,7 @@ for(0 .. 7){
 	$chessboard[0]->[$_] = "W" . $back[$_];
         $chessboard[1]->[$_] = "WP";
         $chessboard[6]->[$_] = "BP";
-        $chessboard[7]->[$_] = "B"  . $back[$_];
+        $chessboard[7]->[$_] = "B" . $back[$_];
 }
 while(1){
           for my $i (reverse (0 .. 7)){
@@ -30,10 +30,11 @@ while(1){
 	  my $move=<>;
 	  last unless($move=~ /^\s*([1-8]),([1-8])/);
 	  my $startx = $1-1;
-	  my $starty = $2-2;
+	  my $starty = $2-1;
 
 	  unless (defined $chessboard[$starty]->[$startx]){
 	  	print "There is nothing on that square!\n";
+		next;
 	  }
 	  print "\nEnding square[x,y]: ";
 	  $move = <>;
