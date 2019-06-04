@@ -12,7 +12,6 @@ for(0 .. 7){
         $chessboard[6]->[$_] = "BP";
         $chessboard[7]->[$_] = "B"  . $back[$_];
 }
-  
 while(1){
           for my $i (reverse (0 .. 7)){
                   for my $j(0 .. 7){
