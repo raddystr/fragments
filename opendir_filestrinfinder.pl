@@ -3,6 +3,7 @@ use strict;
 use warnings;
 
 print"Hello, enter the full path to the targeted directory:\n";
+
 my $dir = <STDIN>;
 chomp($dir);
 print"Thanks, now enter the thing that you want to find:\n";
