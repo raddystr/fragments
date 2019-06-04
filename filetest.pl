@@ -8,11 +8,11 @@ while(1){
 	$target = <STDIN>;
 	chomp $target;
 		if(-d $target){
-			print"No, $target is a directory\n";
+			print"No, $target is a directory!\n";
 			next;
 		}
 		if(-e $target ){
-			print"File already exusts. What should I do?\n";
+			print"File already exists. What should I do?\n";
 			print"(Enter 'r' to write to a different name, ";
 			print "'o' to overwrite or\n";
 			print "'b' to back up to $target.old)\n";
@@ -22,7 +22,7 @@ while(1){
 				next; 
 			}elsif($choice eq 'o'){
 				unless(-o $target){
-					print"Can't overwrite $target, it's not yours\n";
+					print"Can't overwrite $target, it's not yours!\n";
 					next;	
 				}	
 				unless(-w $target){
