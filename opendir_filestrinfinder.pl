@@ -22,7 +22,3 @@ foreach my $file(glob("$dir/*.*")){
 	}
 	close FH or die "I can't do this\n"; 
 }
-
-
-
-
