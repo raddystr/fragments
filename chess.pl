@@ -3,8 +3,7 @@ use warnings;
 use strict;
    
 my @chessboard;
-my @back= qw(R N B Q K B N R);
-   
+my @back= qw(R N B Q K B N R);   
 for(0 .. 7){
 	$chessboard[0]->[$_] = "W" . $back[$_];
         $chessboard[1]->[$_] = "WP";
