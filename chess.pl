@@ -59,5 +59,4 @@ while(1){
 	  }
 	  $chessboard[$endy]->[$endx] = $chessboard[$starty]->[$startx];
 	  undef $chessboard[$starty]->[$startx]; 
-
   }
