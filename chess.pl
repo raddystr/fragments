@@ -1,17 +1,17 @@
 #!/usr/local/bin/perl
-   
 use warnings;
 use strict;
    
 my @chessboard;
-my @back= qw(R N B Q K N B R);
+my @back= qw(R N B Q K B N R);
    
 for(0 .. 7){
 	$chessboard[0]->[$_] = "W" . $back[$_];
         $chessboard[1]->[$_] = "WP";
         $chessboard[6]->[$_] = "BP";
-        $chessboard[7]->[$_] = "B" . $back[$_];
+        $chessboard[7]->[$_] = "B"  . $back[$_];
 }
+  
 while(1){
           for my $i (reverse (0 .. 7)){
                   for my $j(0 .. 7){
@@ -26,6 +26,7 @@ while(1){
                   }
 		  print "\n";
           }
+	
 	  print "\nStarting square[x, y]: ";
 	  my $move=<>;
 	  last unless($move=~ /^\s*([1-8]),([1-8])/);
@@ -38,11 +39,29 @@ while(1){
 	  }
 	  print "\nEnding square[x,y]: ";
 	  $move = <>;
-	  last unless($move =~/([1-8]),([1-8])/ );
+	  last unless($move =~ /([1-8]),([1-8])/ );
 	  my $endx = $1-1;
 	  my $endy = $2-1;
 
+	  if($chessboard[$starty]->[$startx]=~ /([WB])N/){
+	  	my $color = $1;
+		print "$color Knight's move\n";
+
+		if(defined $chessboard[$endy]->[$endx]){
+			if($chessboard[$endy]->[$endx]=~ /$color\w/){
+				print"Don't take one of your own.\n";
+			}
+		}
+		if(((abs($endy - $starty)==2) && (abs($endx - $startx)==1)) || ((abs($endx - $startx)==2) &&($endy - $starty)==1 )){
+			print"Good move\n\n";
+		}else{
+			print"Knight move in a L-shape\n\n";
+			next; 
+		}
+	  }
+
 	  $chessboard[$endy]->[$endx] = $chessboard[$starty]->[$startx];
 	  undef $chessboard[$starty]->[$startx]; 
-	
+
   }
+
