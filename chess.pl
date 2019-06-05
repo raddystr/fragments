@@ -25,7 +25,6 @@ while(1){
                   }
 		  print "\n";
           }
-	
 	  print "\nStarting square[x, y]: ";
 	  my $move=<>;
 	  last unless($move=~ /^\s*([1-8]),([1-8])/);
