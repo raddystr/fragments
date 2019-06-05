@@ -62,4 +62,3 @@ while(1){
 	  undef $chessboard[$starty]->[$startx]; 
 
   }
-
