@@ -55,7 +55,7 @@ while(1){
 		if( ( (abs($endy - $starty)==0 && (abs($endx - $startx)<=8)) || ( (abs($endx - $startx)==0) && (abs($endy - $starty)<=8 ) ) ) ){
 					print"Good move ROOK\n\n";		
 		}else{
-					print"Rook moves in straight line!"; 
+					print"Rook moves in straight line!\n"; 
 					next;
 			}
 		}
@@ -73,7 +73,7 @@ while(1){
 		if(((abs($endy - $starty)==2) && (abs($endx - $startx)==1)) || ((abs($endx - $startx)==2) &&($endy - $starty)==1 )){
 			print"Good move KNIGHT\n\n";
 		}else{
-			print"Knight move in a L-shape\n\n";
+			print"Knight moves in a L-shape\n\n";
 			next; 
 		}
 	  }
