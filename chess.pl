@@ -46,7 +46,7 @@ while(1){
 	  my $endy = $2-1;
 ##############PAWN MOVE FIRST MOVE#################################################################################################
 	  ##################################################################
-	if(($chessboard[$starty]->[$startx]=~/BP/ && $starty==6) || ($chessboard[$starty]->[$startx]=~/WP/ && $starty==1)) {
+	if(($chessboard[$starty]->[$startx]=~/BP/) || ($chessboard[$starty]->[$startx]=~/WP/)) {
 		my $color = 1;
 		print"$color Pawn's move\n";
 
