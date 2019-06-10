@@ -1,7 +1,8 @@
 #!/usr/local/bin/perl
 use warnings;
 use strict;
-   
+use diagnostics;
+###########################################CREATION OF THE BOARD AND STARTING POSITIONS ###########################################################
 my @chessboard;
 my @back= qw(R N B Q K B N R);
    
@@ -26,7 +27,8 @@ while(1){
                   }
 		  print "\n";
           }
-	
+	  ###############################################GAME START AND INPUTS##################################################################	
+	  ######################################################################################################################################
 	  print "\nStarting square[x, y]: ";
 	  my $move=<>;
 	  last unless($move=~ /^\s*([1-8]),([1-8])/);
@@ -42,7 +44,45 @@ while(1){
 	  last unless($move =~ /([1-8]),([1-8])/ );
 	  my $endx = $1-1;
 	  my $endy = $2-1;
-	#####ROOK MOVE#############
+##############PAWN MOVE FIRST MOVE#################################################################################################
+	  ##################################################################
+	if(($chessboard[$starty]->[$startx]=~/BP/ && $starty==6) || ($chessboard[$starty]->[$startx]=~/WP/ && $starty==1)) {
+		my $color = 1;
+		print"$color Pawn's move\n";
+
+		if(defined $chessboard[$endy]->[$endx]){
+			if($chessboard[$endy]->[$endx]=~/$color\w/){
+				print"Don't take from your own.\n";
+			}
+		}
+		if( ( (abs($endx-$startx)==0) && (abs($endy-$starty)<=2) && $endy>=$starty && ( $chessboard[$starty]->[$startx]=~ m/WP/)) ||  
+			( (abs($endx-$startx)==0) && (abs($endy-$starty)<=2) && $endy<=$starty && ( $chessboard[$starty]->[$startx]=~ m/BP/)) ){
+			print"Good first move Pawn!\n";
+		}else{
+			print"Pawn move for one or two squares as a first move and only straight forward!\n";
+			next; 
+		}
+	} 
+#######################################PAWN REGULAR MOVE##################################################################
+	####################################################################
+	if($chessboard[$starty]->[$startx]=~/BP/ && $starty!=6 || ($chessboard[$starty]->[$startx]=~/WP/ && $starty!=1) ){
+		my $color = 1;
+		print"$color Pawn's move\n";
+
+		if(defined $chessboard[$endy]->[$endx]){
+			if($chessboard[$endy]->[$endx]=~/$color\w/){
+				print"Don't take of your own.\n";			}
+		}
+		if( ( (abs($endx-$startx)==0) && (abs($endy-$starty)<=1) && $endy>=$starty && ( $chessboard[$starty]->[$startx]=~ m/WP/)) ||  
+			( (abs($endx-$startx)==0) && (abs($endy-$starty)<=1) && $endy<=$starty && ( $chessboard[$starty]->[$startx]=~ m/BP/)) ){
+			print"Good move Pawn!\n";	
+		}else{
+			print"Pawn move for one square as and only straight forward!\n";
+			next; 
+		}
+	} 
+##########################################ROOK MOVE#################################################################
+	####################################################################
 	if($chessboard[$starty]->[$startx]=~ /([WB])R/){
 		my $color = $1;
 		print "$color Rook's move\n";
@@ -53,14 +93,15 @@ while(1){
 			}
 		}
 		if( ( (abs($endy - $starty)==0 && (abs($endx - $startx)<=8)) || ( (abs($endx - $startx)==0) && (abs($endy - $starty)<=8 ) ) ) ){
-					print"Good move Rook\n\n";		
+			print"Good move ROOK\n\n";		
 		}else{
-					print"Rook moves in straight line!\n"; 
-					next;
+			print"Rook moves in straight line!\n"; 
+			next;
 			}
 		}
-		############
-	  ######HORSE MOVE######### 
+		
+#####################################KNIGHT MOVE###########################################################################################
+		#####################################################
 	  if($chessboard[$starty]->[$startx]=~ /([WB])N/){
 	  	my $color = $1;
 		print "$color Knight's move\n";
@@ -71,13 +112,13 @@ while(1){
 			}
 		}
 		if(((abs($endy - $starty)==2) && (abs($endx - $startx)==1)) || ((abs($endx - $startx)==2) &&($endy - $starty)==1 )){
-			print"Good move Knight\n\n";
+			print"Good move KNIGHT\n\n";
 		}else{
 			print"Knight moves in a L-shape\n\n";
 			next; 
 		}
 	  }
-	  ###################
+	  ###########END#########################
 	  $chessboard[$endy]->[$endx] = $chessboard[$starty]->[$startx];
 	  undef $chessboard[$starty]->[$startx]; 
   }
