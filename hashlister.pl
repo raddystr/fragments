@@ -51,7 +51,7 @@ EOF
 	sub read_{
 		my $key_name = get_key();
 		if(exists $hash{$key_name}){
-		print'nElement $key_name has value', "$hash{$key_name}.\n";
+			print'Element $key_name has value', "$hash{$key_name}.\n";
 		}else{
 			print"Sorry, this element does not exists.\n";
 		}
@@ -62,28 +62,34 @@ EOF
 		my $key_val = get_val();
 
 		if(exists $hash{$key_name}){
-			print"Sorry this element already exists.\n"
+			print"Sorry, this element already exists.\n"
 		}else{
 			$hash{$key_name} = $key_val;
 		}
-	}	
+	}
+	
 	sub delete_{
 		my $key_name = get_key();
 		if(exists $hash{$key_name}){
 			print "This will delete entry $key_name.\n"; 
 			delete $hash{$key_name}; 
 		}else{
-			print"The file does not exists.\n"; 
+			print"The file does not exist.\n"; 
 		}
 	
 	}
+	
 	sub clear{
 		%hash = undef;
-	}sub get_key{
-		print"Enter key name of element: \n";
+	 	print"Memory is clear!\n";
+	}
+	
+	sub get_key{
+		print"Enter key name of element:\n";
 		chomp (my $key_name = <STDIN>);
 		return $key_name;
 	}
+	
 	sub get_val{
 		print"Enter value of element:\n";
 		chomp(my $val_name=<STDIN>);
