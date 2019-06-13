@@ -1,7 +1,7 @@
 #!/usr/local/bin/perl
 use strict;
 use warnings;
-use lib '/home/projects/begperl/exc/ch10';
+use lib 'path/to/Person.pm';
 use Person;
 
 my $first_person =Person->new(
