@@ -1,9 +1,8 @@
 package Employee;
-use lib '/home/projects/begperl/exc/ch10';
+use lib 'path/to/Peson.pm';
 use Person;
 use strict;
 use warnings; 
-
 
 our @ISA=qw(Person);
 
@@ -70,9 +69,4 @@ EOF
 
 	return $self;
 }
-
-
-
-
-
-
+1;
