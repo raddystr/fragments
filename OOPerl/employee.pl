@@ -1,5 +1,5 @@
 #!/uss/local/bin/perl
-use lib '/home/projects/begperl/exc/ch10';
+use lib 'path/to/Employee.pm';
 use Employee; 
 use strict;
 use warnings;
