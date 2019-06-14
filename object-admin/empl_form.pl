@@ -20,7 +20,7 @@ if($cgi->param('uname') and $cgi->param('name') and  $cgi->param('pass') and $cg
 	my $query = "insert into employees(user_name, name, password, personal_no, status)values('$uname', '$name', '$pass', '$personal_n', '$status')";
 
 	my $dbh=DBI->connect(
-		('dbi:mysql:partners_stats','partners_dbadmin','P@ssword1'), 
+		('dbi:mysql:db','Name','Pass'), 
 		{RaiseError=>1}
 		);
 
