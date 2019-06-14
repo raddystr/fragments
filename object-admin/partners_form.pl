@@ -18,7 +18,7 @@ my $status = $cgi->param('status');
 my $query = "insert into partners(name, adress, status)values('$name', '$adress', '$status')";
 
 my $dbh=DBI->connect(
-	('dbi:mysql:partners_stats','partners_dbadmin','P@ssword1'), 
+	('dbi:mysql:db','admin','pass'), 
 	{RaiseError=>1}
 	);
 
