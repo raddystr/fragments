@@ -20,7 +20,7 @@ my $status = $cgi->param('status');
 my $query = "insert into objects(name, ext_pos_unique_id, adress, employees_count, status)values('$name', '$pos', '$adress', $emp_count, '$status')";
 
 my $dbh=DBI->connect(
-	('dbi:mysql:partners_stats','partners_dbadmin','P@ssword1'), 
+	('dbi:mysql:db','name','pass'), 
 	{RaiseError=>1}
 	);
 
