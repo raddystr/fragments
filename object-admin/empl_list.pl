@@ -6,7 +6,7 @@ use strict;
 
 
 my $dbh=DBI->connect(
-	('dbi:mysql:partners_stats','partners_dbadmin','P@ssword1'), 
+	('dbi:mysql:db','name','pass'), 
 	{RaiseError=>1}
 );
 
