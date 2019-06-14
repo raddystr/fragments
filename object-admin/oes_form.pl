@@ -20,7 +20,7 @@ if($cgi->param('obj_recno') and $cgi->param('empl_recno') and  $cgi->param('sell
 	my $query = "insert into objects_employees_sells(obj_recno, empl_recno, sell_type, sum, status)values('$obj_recno', '$empl_recno', '$sell_type', '$sum', '$status')";
 
 	my $dbh=DBI->connect(
-		('dbi:mysql:partners_stats','partners_dbadmin','P@ssword1'), 
+		('dbi:mysql:db','name','pass'), 
 		{RaiseError=>1}
 		);
 
