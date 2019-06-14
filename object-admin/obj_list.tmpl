@@ -1,0 +1,29 @@
+<!--obj_list.tmpl-->
+<html>
+<head>
+<title>Objects listing</title>
+</head>
+<body>
+<h1>Objects:</h1>
+<table>
+<TMPL_LOOP NAME=ROWS>
+	<p>
+		<TMPL_VAR NAME=RECNO>. <TMPL_VAR NAME=NAME></br>
+		<TMPL_VAR NAME=EXT_POS_UNIQUE_ID></br>	
+		<TMPL_VAR NAME=ADRESS></br>
+		<TMPL_VAR NAME=EMPLOYEES_COUNT></br>
+		<TMPL_VAR NAME=STATUS></br>
+
+	</p>
+</TMPL_LOOP>
+</table>
+<form action="obj_form.pl">
+<input type="submit" value="Register a new object"/>
+</form>
+<form action="index.cgi">
+<p><input type="submit" value="Home"/>
+</form>
+</body>
+</html>
+
+	

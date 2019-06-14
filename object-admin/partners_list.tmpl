@@ -1,0 +1,27 @@
+<!--Partners_list.tmpl-->
+<html>
+<head>
+<title>Partners Listing</title>
+</head>
+<body>
+<h1>Partners:</h1>
+<table>
+<TMPL_LOOP NAME=ROWS>
+	<p>
+		<TMPL_VAR NAME=RECNO>. <TMPL_VAR NAME=NAME></br>
+		<TMPL_VAR NAME=ADRESS></br>
+		<TMPL_VAR NAME=STATUS></br>
+
+	</p>
+</TMPL_LOOP>
+</table>
+<form action="partners_form.pl">
+<input type="submit" value="Register a new partner"/>
+</form>
+<form action="index.cgi">
+<p><input type="submit" value="Home"/>
+</form>
+</body>
+</html>
+
+	
