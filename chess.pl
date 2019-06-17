@@ -1,8 +1,9 @@
 #!/usr/local/bin/perl
 use warnings;
 use strict;
-use diagnostics;
-###########################################CREATION OF THE BOARD AND STARTING POSITIONS ###########################################################
+
+########################################### CREATION OF THE BOARD AND STARTING POSITIONS ##################################################################
+
 my @chessboard;
 my @back= qw(R N B Q K B N R);
    
@@ -27,8 +28,9 @@ while(1){
                   }
 		  print "\n";
           }
-	  ###############################################GAME START AND INPUTS##################################################################	
-	  ######################################################################################################################################
+
+############################################### GAME START AND INPUTS #####################################################################################	
+	 
 	  print "\nStarting square[x, y]: ";
 	  my $move=<>;
 	  last unless($move=~ /^\s*([1-8]),([1-8])/);
@@ -44,11 +46,12 @@ while(1){
 	  last unless($move =~ /([1-8]),([1-8])/ );
 	  my $endx = $1-1;
 	  my $endy = $2-1;
-##############PAWN MOVE FIRST MOVE#################################################################################################
-	  ##################################################################
+
+########################################### PAWN'S MOVE FIRST MOVE ########################################################################################
+	  
 	if(($chessboard[$starty]->[$startx]=~/BP/) || ($chessboard[$starty]->[$startx]=~/WP/)) {
 		my $color = 1;
-		print"$color Pawn's move\n";
+		print"$color Pawn's move!\n";
 
 		if(defined $chessboard[$endy]->[$endx]){
 			if($chessboard[$endy]->[$endx]=~/$color\w/){
@@ -63,11 +66,12 @@ while(1){
 			next; 
 		}
 	} 
-#######################################PAWN REGULAR MOVE##################################################################
-	####################################################################
+
+############################################################# PAWN'S REGULAR MOVE #########################################################################
+
 	if($chessboard[$starty]->[$startx]=~/BP/ && $starty!=6 || ($chessboard[$starty]->[$startx]=~/WP/ && $starty!=1) ){
 		my $color = 1;
-		print"$color Pawn's move\n";
+		print"$color Pawn's move!\n";
 
 		if(defined $chessboard[$endy]->[$endx]){
 			if($chessboard[$endy]->[$endx]=~/$color\w/){
@@ -80,31 +84,32 @@ while(1){
 			print"Pawn move for one square as and only straight forward!\n";
 			next; 
 		}
-	} 
-##########################################ROOK MOVE#################################################################
-	####################################################################
+	}
+
+###################################################################### ROOK'S MOVE ########################################################################
+	
 	if($chessboard[$starty]->[$startx]=~ /([WB])R/){
 		my $color = $1;
-		print "$color Rook's move\n";
+		print "$color Rook's move!\n";
 
 		if(defined $chessboard[$endy]->[$endx]){
 			if($chessboard[$endy]->[$endx]=~ /$color\w/){
 				print"Don't take one of your own.\n";
 			}
 		}
-		if( ( (abs($endy - $starty)==0 && (abs($endx - $startx)<=8)) || ( (abs($endx - $startx)==0) && (abs($endy - $starty)<=8 ) ) ) ){
-			print"Good move ROOK\n\n";		
+		if( ( (abs($endy - $starty)==0 && (abs($endx - $startx)<=7)) || ( (abs($endx - $startx)==0) && (abs($endy - $starty)<=7 ) ) ) ){
+			print"Good move Rook!\n\n";		
 		}else{
 			print"Rook moves in straight line!\n"; 
 			next;
 			}
 		}
 		
-#####################################KNIGHT MOVE###########################################################################################
-		#####################################################
+########################################### KNIGHT'S MOVE #################################################################################################
+		
 	  if($chessboard[$starty]->[$startx]=~ /([WB])N/){
 	  	my $color = $1;
-		print "$color Knight's move\n";
+		print "$color Knight's move!\n";
 
 		if(defined $chessboard[$endy]->[$endx]){
 			if($chessboard[$endy]->[$endx]=~ /$color\w/){
@@ -112,13 +117,74 @@ while(1){
 			}
 		}
 		if(((abs($endy - $starty)==2) && (abs($endx - $startx)==1)) || ((abs($endx - $startx)==2) &&($endy - $starty)==1 )){
-			print"Good move KNIGHT\n\n";
+			print"Good move Knight!\n\n";
 		}else{
-			print"Knight moves in a L-shape\n\n";
+			print"Knight moves in a L-shape!\n\n";
 			next; 
 		}
 	  }
-	  ###########END#########################
+
+##################################################################### BISHOP'S MOVE #######################################################################
+
+	if($chessboard[$starty]->[$startx]=~ /([WB])B/){
+		my $color = $1;
+		print "$color Bishop's move!\n";
+
+		if(defined $chessboard[$endy]->[$endx]){
+			if($chessboard[$endy]->[$endx]=~ /$color\w/){
+				print"Don't take one of your own.\n";
+			}
+		}
+		if  (((abs($endy - $starty)<=7) && ($endx > $startx && $endx % 2==0  ) ||  ($endx < $startx) ))    {
+			print"Good move Bishop!\n\n";		
+		}else{
+			print"Bishop moves in diagonals!\n"; 
+			next;
+			}
+		}
+
+##################################################################### QUEENS'S MOVE #######################################################################
+
+	if($chessboard[$starty]->[$startx]=~ /([WB])Q/){
+		my $color = $1;
+		print "$color Queen's move!\n";
+
+		if(defined $chessboard[$endy]->[$endx]){
+			if($chessboard[$endy]->[$endx]=~ /$color\w/){
+				print"Don't take one of your own.\n";
+			}
+		}
+		if  (((abs($endy - $starty)<=7) && ($endx > $startx) ||  ($endx < $startx) )  ||
+		    ( (abs($endy - $starty)==0 && (abs($endx - $startx)<=7)) || ( (abs($endx - $startx)==0) && (abs($endy - $starty)<=7 ) ) ) ) {
+			print"Good move Queen!\n\n";		
+		}else{
+			print"This is not correct Queen's move!\n"; 
+			next;
+			}
+		}
+		
+##################################################################### KING'S MOVE #######################################################################
+
+	if($chessboard[$starty]->[$startx]=~ /([WB])K/){
+		my $color = $1;
+		print "$color King's move!\n";
+
+		if(defined $chessboard[$endy]->[$endx]){
+			if($chessboard[$endy]->[$endx]=~ /$color\w/){
+				print"Don't take one of your own.\n";
+			}
+		}
+		if  (((abs($endy - $starty)<=1) && ($endx > $startx) ||  ($endx < $startx) )  ||
+		    ( (abs($endy - $starty)==0 && (abs($endx - $startx)<=1)) || ( (abs($endx - $startx)==0) && (abs($endy - $starty)<=1 ) ) ) ) {
+			print"Good move King!\n\n";		
+		}else{
+			print"This is not correct King's move!\n"; 
+			next;
+			}
+		}
+				
+########################################################## END #############################################################################################
+
 	  $chessboard[$endy]->[$endx] = $chessboard[$starty]->[$startx];
 	  undef $chessboard[$starty]->[$startx]; 
   }
