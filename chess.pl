@@ -135,7 +135,7 @@ while(1){
 				print"Don't take one of your own.\n";
 			}
 		}
-		if  (((abs($endy - $starty)<=7) && ($endx > $startx && $endx % 2==0  ) ||  ($endx < $startx) ))    {
+		if  ( ( (abs($endy-$starty))== (abs($endx - $startx ) ) ) )  {
 			print"Good move Bishop!\n\n";		
 		}else{
 			print"Bishop moves in diagonals!\n"; 
@@ -154,7 +154,7 @@ while(1){
 				print"Don't take one of your own.\n";
 			}
 		}
-		if  (((abs($endy - $starty)<=7) && ($endx > $startx) ||  ($endx < $startx) )  ||
+		if  (( (abs($endy-$starty))== (abs($endx - $startx ) ) )   ||
 		    ( (abs($endy - $starty)==0 && (abs($endx - $startx)<=7)) || ( (abs($endx - $startx)==0) && (abs($endy - $starty)<=7 ) ) ) ) {
 			print"Good move Queen!\n\n";		
 		}else{
@@ -174,8 +174,7 @@ while(1){
 				print"Don't take one of your own.\n";
 			}
 		}
-		if  (((abs($endy - $starty)<=1) && ($endx > $startx) ||  ($endx < $startx) )  ||
-		    ( (abs($endy - $starty)==0 && (abs($endx - $startx)<=1)) || ( (abs($endx - $startx)==0) && (abs($endy - $starty)<=1 ) ) ) ) {
+		if ( (abs($endy - $starty)<=0 && (abs($endx - $startx)<=1)) || ( (abs($endx - $startx)<=1) && (abs($endy - $starty)<=1 ) ) )  {
 			print"Good move King!\n\n";		
 		}else{
 			print"This is not correct King's move!\n"; 
