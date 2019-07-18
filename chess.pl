@@ -41,6 +41,7 @@ while(1){
 	  	print "There is nothing on that square!\n";
 		next;
 	  }
+	  
 	  print "\nEnding square[x,y]: ";
 	  $move = <>;
 	  last unless($move =~ /([1-8]),([1-8])/ );
@@ -61,6 +62,7 @@ while(1){
 		if( ( (abs($endx-$startx)==0) && (abs($endy-$starty)<=2) && $endy>=$starty && ( $chessboard[$starty]->[$startx]=~ m/WP/)) ||  
 			( (abs($endx-$startx)==0) && (abs($endy-$starty)<=2) && $endy<=$starty && ( $chessboard[$starty]->[$startx]=~ m/BP/)) ){
 			print"Good first move Pawn!\n";
+			
 		}else{
 			print"Pawn move for one or two squares as a first move and only straight forward!\n";
 			next; 
