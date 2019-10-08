@@ -17,12 +17,16 @@ open(my $fh, '<:encoding(UTF-8)', $filename)
   or die "Could not open file '$filename' $!";
  
 while (my $row = <$fh>) {
+
   chomp $row;
-  push @cron ,$row;
-   
+
+  push @cron ,$row;   
 }
 
 foreach(@cron){
-my($con1,$cron2,$cron3,$cron4,$cron5,$script)  =split/ /,$_;
-print"$script\n"; 
+
+  my($con1,$cron2,$cron3,$cron4,$cron5,$script)  =split/ /,$_;
+
+  print"$script\n"; 
+
 }                                                                                                                                                                                                                                                                                                                            
