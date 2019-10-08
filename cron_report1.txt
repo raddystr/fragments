@@ -1,32 +1,44 @@
 #!/usr/bin/perl
-use strict; 
+use strict;
 use warnings;
 
-##### Generating filename ##################################
-my($sec, $min, $hour, $mday,$mon,$year,$wday,$yday,$idst)=localtime(); 
+####################################### FILENAMES ##################################
+
+my($sec, $min, $hour, $mday,$mon,$year,$wday,$yday,$idst)=localtime();
+
 my $hostname = qx/hostname/;
+
 $hostname =~ s/\n//;
-my $file = $hostname.$mday.$mon.$year.'.txt';
 
-############### FILES #############
+my $report = $hostname.$mday.$mon.$year.'.txt';
 
-my @cron; 
-my $filename = 'democron.txt';
+my $crontab = 'democron.txt';
 
-open(my $fh, '<:encoding(UTF-8)', $filename)
-  or die "Could not open file '$filename' $!";
- 
+############### WORK #############
+
+my @cron;
+
+
+
+open(my $fh, '<:encoding(UTF-8)', $filename) or die "Could not open file '$filename' $!";
+
 while (my $row = <$fh>) {
 
   chomp $row;
 
-  push @cron ,$row;   
+  push @cron ,$row;
+
 }
 
 foreach(@cron){
-
   my($con1,$cron2,$cron3,$cron4,$cron5,$script)  =split/ /,$_;
 
-  print"$script\n"; 
+  open(FH,'>>', $report) or die 'I can\'t!\n';
 
-}                                                                                                                                                                                                                                                                                                                            
+  print FH $script."\n";
+  
+  close FH;
+
+}
+
+print"Done!\n";
