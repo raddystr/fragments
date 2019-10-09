@@ -28,7 +28,7 @@ print FILE "crontab report:\n";
 
 foreach(@crontab){
 
-        my($con1, $cron2, $cron3, $cron4, $cron5, $script, $arguments)  =split/\t|\s/,$_;
+        my($con1, $cron2, $cron3, $cron4, $cron5, $script, $arguments)  =split/\t|\s+/,$_;
 
         open(FILE,'>>', $report) or die "I can't open it!\n";
 
