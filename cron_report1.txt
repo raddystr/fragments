@@ -9,7 +9,7 @@ my $hostname = `hostname`;
 
 my @crontab = `crontab -l`;
 
-my @services = `cat /home/projects/report_task/var/services/*/run | grep .pl`;
+my @services = `cat ... | grep ...`;
 
 ####################################### REPORT FILENAME ##################################
 
@@ -38,7 +38,7 @@ foreach(@crontab){
 
 }
 
-print"Cronetab report complete!\n";
+print"Crontab report complete!\n";
 
 print FILE "\nservices report:\n";
 
@@ -51,3 +51,5 @@ foreach(@services){
 }
 
 close FILE;
+
+print"Services report complete!\n";
