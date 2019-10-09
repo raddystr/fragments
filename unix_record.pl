@@ -11,7 +11,7 @@ $hostname =~ s/\n//;
 
 my $filename = $hostname.$mday.$mon.$year.'.txt';
 
-my @files=qx/ls/;
+my @files=qx/command/;
 
 open (FH, '>>', $filename) or die "I can't!";
 
