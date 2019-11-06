@@ -10,7 +10,6 @@ EOT
 
 print"$long_string_scalar";
 
-
 #Using subroutine with reference ;)
 
 sub print_msg  {
