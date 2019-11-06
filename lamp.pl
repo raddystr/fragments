@@ -26,7 +26,8 @@ print $ref->("Ops I use it again :)))");
 
 #Perlish switch-case alsol known as a dispathc table
 
-$ref = { 
+$ref = {
+
         'add'           =>sub{my ($val1, $val2 )=@_; return $val1 + $val2},
         'subtract'      =>sub{my ($val1, $val2 )=@_; return $val1 - $val2},
         'multiply'      =>sub{my ($val1, $val2 )=@_; return $val1 * $val2}
