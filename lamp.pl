@@ -13,9 +13,11 @@ print"$long_string_scalar";
 #Using subroutine with reference ;)
 
 sub print_msg  {
+
         my ($msg) = @_; 
         print "MSG:$msg\n"; 
         return();
+        
 }
 $ref = \&print_msg;
 
