@@ -1,6 +1,7 @@
 !/usr/bin/perl -wT
 
 use strict; 
+
 #The basic data types in perl are scalars, arrays, hashes, file handles, type globs, and subroutines.
 
 my $long_string_scalar = <<EOT;
@@ -46,6 +47,7 @@ my @arr =qw (1 2 3 4);
 print map{"current value doubled: $_*2\n"} @arr;
 
 my @src  =qw(a b c);
+
 my @scrap = splice(@arr, 4,3,@src);
 
 print "@scrap\n";
