@@ -46,3 +46,35 @@ my @arr =qw (1 2 3 4);
 print map{"current value doubled: $_*2\n"} @arr;
 
 my @src  =qw(a b c);
+my @scrap = splice(@arr, 4,3,@src);
+
+print "@scrap\n";
+
+#perlish hash printing
+
+my %myhash = (
+        radi=>'programmer',
+        ivan=>'doctor',
+        john=>'musician'
+);
+
+print map {"His name is $_ and he's $myhash{$_}.\n"} keys %myhash; #alsol can be make with values :)))
+
+#making hash from two arrays 
+
+my %hash;
+
+my @array1 = ('a','b','c');
+
+my @array2 = (1,2,3);
+
+@hash{@array1} = @array2;
+
+print "key of new hash is $_ and the corresponding value is $hash{$_}.\n" for sort keys %hash;
+
+print map {"The key of new hash is $_ and the corresponding value is $hash{$_}.\n"} sort keys %hash;
+my @array = sort keys %hash, sort values %hash;
+
+print "@array\n";
+
+
