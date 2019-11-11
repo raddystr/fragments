@@ -1,4 +1,4 @@
-
+#!/usr/bin/perl
 use Term::ANSIColor;
 
 print color('red'); 
