@@ -1,4 +1,5 @@
 #!/usr/bin/perl
+
 use Term::ANSIColor;
 
 print color('red'); 
@@ -7,11 +8,17 @@ print color('reset');
 
 for($i=1;$i<=8;$i++){
 	if($i%2==0){
+	
 		print color('yellow');
+	
 	}else{
+	
 		print color('reset');
+	
 	}
+	
 	print ' 8';
+
 }
 print"\n";
 
