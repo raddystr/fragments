@@ -78,5 +78,3 @@ print map {"The key of new hash is $_ and the corresponding value is $hash{$_}.\
 my @array = sort keys %hash, sort values %hash;
 
 print "@array\n";
-
-
