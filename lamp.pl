@@ -87,3 +87,8 @@ my @array = sort keys %hash, sort values %hash;
 
 print "@array\n";
 
+for(keys %main::){
+
+        print "$_ -> $main::{$_}\n";
+
+}
