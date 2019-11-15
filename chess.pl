@@ -10,17 +10,23 @@ my @chessboard;
 my @back= qw(R N B Q K B N R);
    
 for(0 .. 7){
+
 	$chessboard[0]->[$_] = "W" . $back[$_];
         $chessboard[1]->[$_] = "WP";
         $chessboard[6]->[$_] = "BP";
         $chessboard[7]->[$_] = "B"  . $back[$_];
+
 }
   
 while(1){
-          for my $i (reverse (0 .. 7)){
-                  for my $j(0 .. 7){
-                          if(defined $chessboard[$i]->[$j]){
-                                  print $chessboard[$i]->[$j];
+
+	for my $i (reverse (0 .. 7)){
+        
+		for my $j(0 .. 7){
+                
+			if(defined $chessboard[$i]->[$j]){
+                        
+				print $chessboard[$i]->[$j];
                           }elsif(($i %2)==($j %2) ){
 			  	print"..";
 			  }else{
