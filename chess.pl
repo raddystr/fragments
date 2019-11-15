@@ -6,6 +6,7 @@ use strict;
 ########################################### CREATION OF THE BOARD AND STARTING POSITIONS ##################################################################
 
 my @chessboard;
+
 my @back= qw(R N B Q K B N R);
    
 for(0 .. 7){
