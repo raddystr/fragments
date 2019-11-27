@@ -22,8 +22,8 @@ public class Main {
             if(word.trim().length()==0) {
                 continue;
            }
-            
-            boolean isMixed=false;
+           
+        boolean isMixed=false;
             
             for (int i = 0; i <word.length() ; i++) {
                 if(!Character.isLetter(word.charAt(i))){
@@ -40,8 +40,7 @@ public class Main {
                 }else {
                     mixedCase.add(word);
                 }
-                    }
-                i}
+          }
         System.out.printf("Lower-case: %s%n", String.join(", ", lowerCase));
         System.out.printf("Mixed-case: %s%n", String.join(", ", mixedCase));
         System.out.printf("Upper-case: %s%n", String.join(", ", upperCase));
