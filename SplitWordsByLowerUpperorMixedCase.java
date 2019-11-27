@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+        
         Scanner console = new Scanner(System.in);
 
         String [] words=console.nextLine()
@@ -38,7 +39,7 @@ public class Main {
                     mixedCase.add(word);
                 }
                     }
-                }
+                i}
         System.out.printf("Lower-case: %s%n", String.join(", ", lowerCase));
         System.out.printf("Mixed-case: %s%n", String.join(", ", mixedCase));
         System.out.printf("Upper-case: %s%n", String.join(", ", upperCase));
