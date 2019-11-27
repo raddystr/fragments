@@ -45,4 +45,4 @@ public class Main {
         System.out.printf("Mixed-case: %s%n", String.join(", ", mixedCase));
         System.out.printf("Upper-case: %s%n", String.join(", ", upperCase));
              }
-        }
+    }
