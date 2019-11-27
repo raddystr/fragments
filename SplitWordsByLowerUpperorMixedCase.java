@@ -20,12 +20,11 @@ public class Main {
 
         for (String word : words) {
             if(word.trim().length()==0) {
-                
                 continue;
-            
            }
             
             boolean isMixed=false;
+            
             for (int i = 0; i <word.length() ; i++) {
                 if(!Character.isLetter(word.charAt(i))){
                     mixedCase.add(word);
