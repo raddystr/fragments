@@ -46,4 +46,3 @@ public class Main {
         System.out.printf("Upper-case: %s%n", String.join(", ", upperCase));
              }
         }
-
