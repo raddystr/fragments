@@ -11,7 +11,7 @@ my $headers  = {
 
 my $page = get $URL; 
 
-#my $file  = '/usr/home/projects/lampBook/prices.txt';
+#my $file  = '/usr/home/projects/prices.txt';
 
 #open(FH,'>:utf8',$file) or die $!;
 
