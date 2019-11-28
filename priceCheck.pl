@@ -1,4 +1,4 @@
-#!/usr/local/bin/perl
+#!/usr/bin/perl
 
 use strict;
 use warnings;
@@ -6,8 +6,8 @@ use LWP::Simple qw/get/;
 
 my $URL = 'https://www.emag.bg/smartfon-xiaomi-mi-a3-dual-sim-64gb-4g-kind-of-grey-mi-a3-64-4-grey/pd/D7B936BBM/?X-Search-Id=783e2ce46fe0cd147089&X-Product-Id=53331467&X-Search-Page=1&X-Search-Position=0&X-Section=search&X-MB=0&X-Search-Action=view';
 
-my $headers  = {	
-	'user-agent'=>'Mozilla/5.0 (X11; FreeBSD amd64; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36'}; 
+#my $headers  = {	
+#	'user-agent'=>'Mozilla/5.0 (X11; FreeBSD amd64; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36'}; 
 
 my $page = get $URL; 
 
