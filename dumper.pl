@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
-my $ref1= [
+my $ref1 = [
 	{
 	 	'22'=>['John Smith', 33, 'Cincinati'],
 		'27'=>['Laxmi Narayan', 24, 'Cochin'],
