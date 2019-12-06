@@ -26,7 +26,7 @@ my $ref1 = [
 	} 
 ];
 
-sub ref_iterate{
+sub ref_iterate {
 	my($ref1, $top_flag, $tabcount) = @_;
 	my $tabchar = '    ';
 
@@ -35,7 +35,6 @@ sub ref_iterate{
 		for(keys %$ref1){
 			print $tabchar x $tabcount . "$_=> ";
 			print "\n" unless $top_flag;
-
 			print "\n" if ref($ref1->{$_});
 			ref_iterate($ref1->{$_},0,$tabcount );
 		}
