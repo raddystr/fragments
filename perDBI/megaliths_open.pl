@@ -1,7 +1,7 @@
-#!/usr/local/bin/perl
+#!/usr/bin/perl
+
 use strict;
 use warnings;
-
 
 die "Usage: scnamedata<data file><site name>\n" unless @ARGV==2;
 
