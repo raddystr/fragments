@@ -1,0 +1,32 @@
+Apache VirtualHost setting:
+
+1)sudo mkdir -p /var/www/demos/
+
+2)sudo vim index.html
+/*<h1>Ubuntu virtual host*/
+
+3)sudo chown -R $USER:$USER /var/www/demos/
+
+4)sudo chmod -R 755 /var/www/
+
+/*Creating conf file from 000-default.conf */
+
+5)sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/demos.conf
+
+6)sudo vim /etc/apache2/sites-available/demos.conf
+content:/*
+<VirtualHost *:80>
+    ServerAdmin admin@test.com
+    ServerName demos.com
+    ServerAlias www.demos.com
+    DocumentRoot /var/www/demos/
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+*/
+
+7) sudo a2ensite demos.conf / * if you need sudo a2dissite 000-default.conf
+
+8)vim /etc/hosts
+
+9)sudo apachectl restart
