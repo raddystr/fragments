@@ -37,7 +37,7 @@ close FH;
 
 `sudo chown -R $USER:$USER /var/www/$name`;
 
-`sudo chmod -R 755 /var/www`;
+`sudo chmod -R 755 /var/www/$name`;
 
 open(FH, '>', $conf_name) or die $!;
 
