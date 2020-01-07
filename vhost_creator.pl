@@ -53,4 +53,3 @@ close FH;
 `apachectl restart`; 
 
 print"Virtual host created! Please insert in /etc/hosts the following: 'i.p.address ServerName'\n"; 
-
