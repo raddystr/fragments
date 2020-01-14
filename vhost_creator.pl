@@ -51,4 +51,4 @@ close FH;
 
 `apachectl restart`; 
 
-print"Virtual host created! Please insert in /etc/hosts the following: 'i.p.address ServerName'\n"; 
+print"Apache Virtual host was created!!! \n Please insert in hosts the following: 'i.p.address www.\$name.com'\n"; 
