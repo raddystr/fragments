@@ -53,7 +53,8 @@ while(1){
 	  my $starty = $2-1;
 
 	  unless (defined $chessboard[$starty]->[$startx]){
-	  	print "There is nothing on that square!\n";
+	  	
+		print "There is nothing on that square!\n";
 		next;
 	  }
 	  
