@@ -11,7 +11,6 @@ while(1){
 	my $input=<STDIN>;
 	chomp($input); 
 
-
 	if($input eq "o"){
 		options();
 		next;  
