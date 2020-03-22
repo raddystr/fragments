@@ -6,6 +6,7 @@ use diagnostics;
 my %hash; 
 
 while(1){
+	
 	print"What would you like to do? (press 'o' for options):\n";
 
 	my $input=<STDIN>;
