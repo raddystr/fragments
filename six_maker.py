@@ -1,4 +1,5 @@
 import math
+
 zero = math.factorial(math.factorial(
     0) + math.factorial(0) + math.factorial(0))
 one = math.factorial(math.factorial(1) + math.factorial(1) + math.factorial(1))
