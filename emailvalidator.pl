@@ -2,12 +2,15 @@
 use warnings;
 use strict;
 ####regex for validating emails
-my $email = <STDIN>;
+
+
+for(@ARGV){
 
 if ( $email =~ /^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$/ ) {
-	
+		
 	print "Valid!\n";
 } else {
 	
 	print "Not valid!\n";
+}
 }
