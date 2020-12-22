@@ -1,5 +1,6 @@
 from random import shuffle
 
+
 SUITE = 'H D S C'.split()
 RANKS = '2 3 4 5 6 7 8 9 10 J Q K A'.split()
 
@@ -30,6 +31,7 @@ class Hand:
     def remove_card(self):
         return self.cards.pop()
 
+    
 class Player:
     
     def __init__(self, name, hand):
@@ -71,12 +73,15 @@ war_count = 0
 
 while human.still_has_cards() and comp.still_has_cards():
     total_rounds +=1
+
     print(human.name + " hash the count " + str(len(human.hand.cards)))
+    
     print(comp.name + " hash the count " + str(len(comp.hand.cards)))
     
     table_card = []
 
     c_card = comp.play_card()
+    
     h_card = human.play_card()
 
     table_card.append(c_card)
@@ -101,7 +106,9 @@ while human.still_has_cards() and comp.still_has_cards():
             comp.hand.add(table_card)
 
 print("game over, number of rounds:" + str(total_rounds))
+
 print("War happens" + str(war_count) + "times")
+
 print("Computer card:", str(comp.still_has_cards()))
 
 print("Human card:", str(human.still_has_cards()))
