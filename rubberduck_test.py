@@ -21,6 +21,6 @@ def is_anagram(word1, word2):
     else:
         return(False)
 
-print(is_anagram('hello', 'hlleo'))
-print(is_anagram('test', 'tast'))
-print(is_anagram('one from me', 'me from one'))
+print(is_anagram('hello', 'hlleo')) #True
+print(is_anagram('test', 'tast')) # False
+print(is_anagram('one from me', 'me from one')) #True
