@@ -8,13 +8,13 @@ def is_anagram(word1, word2):
 
 #Second, I think the easiest way is to turn strings to arrays then just lowercase(to avoid case differneces) 
 #and sort them 
-
     for letter in range(len(word1)):
         arr_w1.append(word1[letter].lower())
         arr_w2.append(word2[letter].lower())
 
     arr_w1.sort()
     arr_w2.sort()
+    
 ## Then just do the comparing 
     if arr_w1 == arr_w2:
         return(True)
