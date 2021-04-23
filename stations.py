@@ -1,24 +1,39 @@
-def gas_stations(distance, tank_size, stations):
-    stations_list = []
-    current_distance = tank_size
-    stations.append(distance)
+#first class functions ---> treat functions like any other object
 
-    for i in range(len(stations)):
-        if stations[i] > current_distance:
-            stations_list.append(stations[i - 1])
-            current_distance = tank_size + stations[i - 1]
-    return stations_list
+# closures allow to function to return a second function 
+# which can use all variables as his own
 
 
-print(gas_stations(
-320, 
-90, [
-50, 
-80, 
-140, 
-180, 
-220, 
-290]))
+
+def greeting(name):
+    def greeting_type(grt):
+        print(f"{grt}, {name}!")
+    return greeting_type
+
+first_greeting = greeting('Dragan4o')
+
+first_greeting('Nazdrave')
+
+
+second_greeting = greeting('Guten tag')
+
+second_greeting("Gunter")
+
+
+def decorator_func(arg_function):
+    def wrapper_fucnction():
+        return arg_function()
+    return wrapper_fucnction
+
+def text_log():
+    print("Everythin works as expcted")
+
+
+test_deco = decorator_func(text_log) 
+
+
+test_deco()
+
             
 
 
