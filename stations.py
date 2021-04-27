@@ -1,41 +1,26 @@
-#first class functions ---> treat functions like any other object
+import string
 
-# closures allow to function to return a second function 
-# which can use all variables as his own
+nums = [1, 2, 3, 4, 45, 5, 6, 67, 7, 78, 7, 13, 100, 50, 5, 12]
 
+my_list = [n for n in nums if n%2 ==0]
 
+print(my_list)
 
-def greeting(name):
-    def greeting_type(grt):
-        print(f"{grt}, {name}!")
-    return greeting_type
+my_map = map(lambda n:n%2==0, nums)
+my_filter = filter(lambda n:n%2==0, nums)
 
-first_greeting = greeting('Dragan4o')
+for x in my_map:
+    print("This is map:", x)
 
-first_greeting('Nazdrave')
+for x in my_filter:
+    print("This is filter:", x)
 
+keyboard = list()
 
-second_greeting = greeting('Guten tag')
-
-second_greeting("Gunter")
-
-
-def decorator_func(arg_function):
-    def wrapper_fucnction():
-        return arg_function()
-    return wrapper_fucnction
-
-def text_log():
-    print("Everythin works as expcted")
-
-
-test_deco = decorator_func(text_log) 
-
-
-test_deco()
-
-            
-
+for x in range(2,10):
+    print(x)
+    for letter in string.ascii_lowercase[::2]:
+        print(letter)
 
    
 
