@@ -22,9 +22,7 @@ for x in range(2,10):
     for letter in string.ascii_lowercase[::2]:
         print(letter)
 ####TEESTSSS
-        
-        
-        def add(x, y):
+def add(x, y):
     return x + y
 
 
