@@ -21,6 +21,26 @@ for x in range(2,10):
     print(x)
     for letter in string.ascii_lowercase[::2]:
         print(letter)
+####TEESTSSS
+        
+        
+        def add(x, y):
+    return x + y
+
+
+def substract(x, y):
+    return x - y
+
+
+def multiply(x, y):
+    return x * y
+
+
+def divide(x, y):
+    if y == 0:
+        raise ValueError('Can\'d devide by zero!!!')
+    return x / y
+
 
    
 
