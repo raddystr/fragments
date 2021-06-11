@@ -5,7 +5,6 @@ def f0(a=1, b=2):
     z = a + b
     return(z)
 
-
 @f2 
 def f1(name, age=34):
     return f"I'm {name}. My age is {age} y.o."
@@ -17,19 +16,16 @@ def f2(func):
         ret_val = func(*args, **kwargs)
         return ret_val
     return wrapper
-    
-    
+        
 f1('Petkan', age=12)
 
 my_sum = f0(a=100,b=200)
 
 pres = f1('Strahil', age=100)
 
-
 print(pres)
 
 print(f'This is the sum: {my_sum+100}')
-
 
 #Some practical examples
 
