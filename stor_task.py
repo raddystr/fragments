@@ -9,15 +9,15 @@ for char in range(ord('a'), ord('z')):
 def rand_choice():
     return chr(choice(chars))
 
-hash = ""
+hex_hash = ""
 mail = input("Enter your mail to generate name!")
-while not hash.startswith("00"):
+while not hex_hash.startswith("00"):
     name = ""
     for i in range(5):
         name += rand_choice()
     m = md5()
     m.update(name.encode("utf-8"))
     m.update(mail.encode("utf-8"))
-    hash = m.hexdigest()
-    if  hash.startswith("00"):
+    hex_hash = m.hexdigest()
+    if  hex_hash.startswith("00"):
         print(f'Name: {name} | Mail: {mail}')
