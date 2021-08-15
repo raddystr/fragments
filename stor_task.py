@@ -13,10 +13,12 @@ def rand_choice():
 
 hash = ""
 mail = input("Enter your mail to generate name!")
+
 while not hash.startswith("00"):
     name = ""
     for i in range(5):
         name += rand_choice()
+        
     print(name, mail)
     m = md5()
     m.update(name.encode("utf-8"))
