@@ -1,7 +1,6 @@
 from hashlib import md5
 from random import choice
 
-
 chars = []
 
 for char in range(ord('a'), ord('z')):
