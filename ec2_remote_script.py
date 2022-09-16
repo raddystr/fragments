@@ -19,7 +19,7 @@ message = sys.argv[1]
 
 
 os.system("aws ec2 start-instances \
-            --instance-ids i-0a68fd1ee65e3e636 \
+            --instance-ids  \
             --region us-east-1")
 
 time.sleep(120)
@@ -27,8 +27,8 @@ time.sleep(120)
 
 client.send_command(
     InstanceIds=[
-        'i-08b14c8e3a1802d39',
-        'i-0c92a012ed53e2e51'
+        '',
+        '-'
 
     ],
     DocumentName='AWS-RunShellScript',
