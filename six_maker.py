@@ -3,6 +3,7 @@ import math
 zero = math.factorial(math.factorial(
     0) + math.factorial(0) + math.factorial(0))
 one = math.factorial(math.factorial(1) + math.factorial(1) + math.factorial(1))
+
 two = 2 * 2 + 2
 three = 3 * 3 - 3
 four = (4 + 4)-math.sqrt(4)
