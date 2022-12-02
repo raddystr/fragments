@@ -23,4 +23,4 @@ def main_results(games_palyed: str) -> tuple:
     }
 
     # strategie type: 0 for condition 1; 1 for condition 2
-    return (strategies_counter(games_list, strategie, 0), strategies_counter(games_list, strategie,1))  
+    return (strategies_counter(games_list, strategie, 0), strategies_counter(games_list, strategie, 1))  
