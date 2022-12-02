@@ -1,4 +1,3 @@
-#AoC day1
 def max_elven_food_calculator(list_foods: str) -> tuple:
     list_calories_per_elf, sums_calories_per_elf, sum_per_elf = list_foods.split("\n"), [], 0
     for sc in list_calories_per_elf:
@@ -8,5 +7,4 @@ def max_elven_food_calculator(list_foods: str) -> tuple:
         sums_calories_per_elf.append(sum_per_elf)
         sum_per_elf = 0
         sums_calories_per_elf.sort()
-    return (sums_calories_per_elf[-1], sum(sums_calories_per_elf[-3:]))
- 
+    return (sums_calories_per_elf[-1], sum(sums_calories_per_elf[-3:]))  
