@@ -1,4 +1,4 @@
-def strategies_counter(games_list,strategie, stategie_type) -> int:
+def strategies_counter(games_list: list, strategie: dict, stategie_type: int) -> int:
     result = 0
     for game in games_list:
         result += strategie[game][stategie_type]
