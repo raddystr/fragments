@@ -10,7 +10,7 @@ def points_by_table() -> list:
 
     points_table.insert(0, "zero_points")
 
-    return points__table
+    return points_table
  
 ### PART I
 def main_checker_rucksacks(rucksacks:str):
