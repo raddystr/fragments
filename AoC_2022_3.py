@@ -1,16 +1,16 @@
 import string
 
 def points_by_table() -> list:
-    point_by_letter = [] 
+    points_table = [] 
     for letter in string.ascii_lowercase:
-        point_by_letter.append(letter)
+        points_table.append(letter)
 
     for letter in string.ascii_uppercase:
-        point_by_letter.append(letter)
+        points_table.append(letter)
 
-    point_by_letter.insert(0, "zero_points")
+    points_table.insert(0, "zero_points")
 
-    return point_by_letter
+    return points__table
  
 ### PART I
 def main_checker_rucksacks(rucksacks:str):
