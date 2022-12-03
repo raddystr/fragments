@@ -1,4 +1,5 @@
 import string
+
 def points_by_table() -> list:
     point_by_letter = [] 
     for letter in string.ascii_lowercase:
