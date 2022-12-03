@@ -13,7 +13,7 @@ def points_by_table() -> list:
     return points_table
  
 ### PART I
-def main_checker_rucksacks(rucksacks:str):
+def main_checker_rucksacks(rucksacks:str) -> int:
     rucksacks_list = rucksacks.split("\n")
     points_table = points_by_table()
     items_points = 0
@@ -30,7 +30,7 @@ def _by_gropups(rksl, l):
     return zip(*[iter(rksl)]*l)
   
     
-def badge_checker(rucksacks:str):
+def badge_checker(rucksacks:str) -> int:
     rucksacks_list = rucksacks.split("\n")
     points_table = points_by_table()
     badge_points = 0    
