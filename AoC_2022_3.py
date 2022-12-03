@@ -33,10 +33,9 @@ def _by_gropups(rksl, l):
 def badge_checker(rucksacks:str):
     rucksacks_list = rucksacks.split("\n")
     points_table = points_by_table()
-    badge_points = 0
-    elven_groups = []
-    
+    badge_points = 0    
     elven_groups = list(_by_gropups(rucksacks_list,3))
+    
     for eg in elven_groups:
         rucksack_1, rucksack_2, rucksack_3 = set(eg[0]), set(eg[1]), set(eg[2])
         potential_badges = rucksack_1.intersection(rucksack_2)
