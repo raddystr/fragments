@@ -2,16 +2,18 @@ import string
 
 def points_by_table() -> list:
     points_table = [] 
+    
     for letter in string.ascii_lowercase:
         points_table.append(letter)
-
+    
     for letter in string.ascii_uppercase:
         points_table.append(letter)
-
+    
     points_table.insert(0, "zero_points")
 
     return points_table
- 
+
+
 ### PART I
 def main_checker_rucksacks(rucksacks:str) -> int:
     rucksacks_list = rucksacks.split("\n")
@@ -24,6 +26,7 @@ def main_checker_rucksacks(rucksacks:str) -> int:
         item_points = points_table.index(item)
         items_points += item_points
     return items_points
+
 
 ### PART II
 def _by_gropups(rksl, l):
