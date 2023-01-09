@@ -2,6 +2,7 @@ def is_anagram(word1, word2):
     arr_w1 = []
     arr_w2 = []
 
+
 # First let's check if the strings length is equal if it's not we don't need to proceed...
     if len(word1) != len(word1):
         return False
