@@ -1,0 +1,5 @@
+1. ml(engineering (ps)) -> Airflow book -> ML(HandsOn, OP, EKS)
+2. SQL -> Spark -> frank ->  ES -> Kafka 
+3. Math(U) -> ML(DS, ML, ML)(U)
+4. DevOps(U) -> AWS(ACG) 
+5. Python -> Algo
