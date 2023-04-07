@@ -8,7 +8,7 @@ I. QUICKSTART:
 
 
 II. SOURCES:
-    
+```    
 source | databases:
     nexdp,
     marketdata,
@@ -38,7 +38,7 @@ tables:
         ad_deribit_options_trades
 
     reports.mm_daily_markouts
- 
+```
 
 III. METHODS:
 
@@ -49,7 +49,7 @@ III. METHODS:
 
 
 1. Single source
-
+```
 wrapper.get_mm_trade(source="nexdp", columns=[#columns to select | empty or no param returns all columns],date_from="2023-02-22", date_to="2023-02-22", debug=True|False) 
 
 
@@ -62,8 +62,9 @@ date_from="year-month-day", date_to="year-month-day",
                     exchanges=["EXCHANGE"],
                     timestamp='timestamp+1hour',
                     limit=(imit of returner rows)
-
+```
 2. Multi source
+```
 wrapper.get_trades(source="ad" | "tardis_perp" | "nexdp", 
                     columns=[#columns to select | empty or no param for all columns],
                     symbols=["base_qoute"],
@@ -84,8 +85,9 @@ wrapper.get_tickers(source="ad" | "tardis_perp" | "nexdp",
 wrapper.get_ob_events(source="ad" | "tardis" | "nexdp, columns=[#columns to select | empty or no param for all columns])
 
 wrapper.get_ob_snapshots(source="ad" | "tardis", columns=[#columns to select | empty or no param for all columns] )
-
+```
 3. Options
+```
 wrapperp.get_tardis_options_trades(
                                     columns=[#columns to select | empty or no param for all columns], 
                                     symbols=[#this is the underlying],
@@ -106,6 +108,8 @@ wrapper.get_tardis_enriched_options_trades(
                                     expiration_date_from="2023-02-20",
                                     expiration_date_to="2023-02-20",
                                     symbols=["ETH-01JAN23-"])
-
+```
 4. Execute query 
+```
 wrapper.exec_query(database='marketdata'| or anyone else, query='SELECT something FROM table WHERE something', debug=True | False ) 
+```
