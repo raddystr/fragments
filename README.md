@@ -1,115 +1,80 @@
-I. QUICKSTART:
+PROJECT NAME: iriswall v.1
 
-1. (if not) set the prod(nexo-exchanges) credentials in .aws/credentials [default]. Put the package in workdir or in `PYTHONPATH:` and import like:
+##############################################################################
 
-`from quant_data_wrapper.wrapper import QuantWrapper`
+PROJECT STRUCTURE:
 
-`wrapper = QuantWrapper()`
+##############################################################################
 
-
-II. SOURCES:
-```    
-source | databases:
-    nexdp,
-    marketdata,
-    report,
-
-tables:
-    nexdp.influx_mmeh_stats
-        influx_stats_default
-        mm_deal
-        mm_order
-        mm_trade
-        spot_edge_orderbook
-        spot_edge_ticker
-        spot_ticker
-        spot_trade
-
-    marketdata.mm_spot_trades
-        mm_spot_tickers
-        mm_tardis_perp_tickers
-        mm_spot_ob_events
-        mm_tardis_perp_ob
-        mm_spot_ob_snapshots
-        mm_tardis_perp_ob_snapshots
-        mm_tardis_enriched_options_trades
-        mm_tardis_perp_trades
-        mm_tardis_options_trades
-        ad_deribit_options_trades
-
-    reports.mm_daily_markouts
 ```
+─ iriswall
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-310.pyc
+│   │   ├── settings.cpython-310.pyc
+│   │   ├── urls.cpython-310.pyc
+│   │   └── wsgi.cpython-310.pyc
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── manage.py
+├── requirements.txt
+├── wall
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-310.pyc
+│   │   ├── admin.cpython-310.pyc
+│   │   ├── apps.cpython-310.pyc
+│   │   ├── models.cpython-310.pyc
+│   │   ├── tests.cpython-310.pyc
+│   │   └── views.cpython-310.pyc
+│   ├── admin.py
+│   ├── apps.py
+│   ├── migrations
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   │       └── __init__.cpython-310.pyc
+│   ├── models.py
+│   ├── tests.py
+│   └── views.py
+└── workers.log
 
-III. METHODS:
-
-***common params:
-    debug=True | False *True prints query
-    columns=list()
-    date_from, date_to=string like 'YYYY-MM-DD'
-
-
-1. Single source
 ```
-wrapper.get_mm_trade(source="nexdp", columns=[#columns to select | empty or no param returns all columns],date_from="2023-02-22", date_to="2023-02-22", debug=True|False) 
+##############################################################################
 
+QUICKSTART:
 
-wrapper.get_mm_deal(source="nexdp", columns=[#columns to select | empty or no param for all columns], date_from=deal_day_from, date_to=deal_day_to, symbols=, timestamp)
+UNIX:
 
-wrapper.get_mm_order(source="nexdp", columns=[#columns to select | empty or no param for all columns], 
+1. From root directory run `python3 manage.py runserver` optional you can use
+<portnumber> for a specific port.
 
-date_from="year-month-day", date_to="year-month-day",
-                    symbols=["BASE/QUOTE"],
-                    exchanges=["EXCHANGE"],
-                    timestamp='timestamp+1hour',
-                    limit=(imit of returner rows)
-```
-2. Multi source
-```
-wrapper.get_trades(source="ad" | "tardis_perp" | "nexdp", 
-                    columns=[#columns to select | empty or no param for all columns],
-                    symbols=["base_qoute"],
-                    exchanges=["exchange"],
-                    date_from="date",
-                    date_to="date",
-                    timestamp=milisecond | microsecond | "2022-01-22 00:00:00")
+2. By default the api can be accessed on localhost:8000
 
+3. You can run all test from ROOT directory of the project:
+ `python3 manage.py test wall.tests.WallTests`
 
-wrapper.get_tickers(source="ad" | "tardis_perp" | "nexdp", 
-                    columns=[#columns to select | empty or no param for all columns],
-                    symbols=["base_qoute"],
-                    exchanges=["exchange"],
-                    date_from="date",
-                    date_to="date",
-                    timestamp=milisecond | microsecond | "2022-01-22 00:00:00")
+DOCKER:
 
-wrapper.get_ob_events(source="ad" | "tardis" | "nexdp, columns=[#columns to select | empty or no param for all columns])
+1. You can also run the project with Docker `Dockerfile` is available in the 
+root dir of the project
 
-wrapper.get_ob_snapshots(source="ad" | "tardis", columns=[#columns to select | empty or no param for all columns] )
-```
-3. Options
-```
-wrapperp.get_tardis_options_trades(
-                                    columns=[#columns to select | empty or no param for all columns], 
-                                    symbols=[#this is the underlying],
-                                    exchanges=[],
-                                    date_from="2023-01-20"
-                                    date_to="20239-01-20",
-                                    expiration_date_from="2023-02-20",
-                                    expiration_date_to="2023-02-20",
-                                    symbols=["ETH-01JAN23"])
+2. docker build -t <image_name> . now the project is available as a local img
 
+3. docker run -it -p <img>:<host> <image_name> e.g. docker run -it -p 8000:8000 iriswall
 
-wrapper.get_tardis_enriched_options_trades(
-                                    columns=[#columns to select | empty or no param for all columns], 
-                                    symbols=[#this is the underlying],
-                                    exchanges=[],
-                                    date_from="2023-01-20"
-                                    date_to="20239-01-20",
-                                    expiration_date_from="2023-02-20",
-                                    expiration_date_to="2023-02-20",
-                                    symbols=["ETH-01JAN23-"])
-```
-4. Execute query 
-```
-wrapper.exec_query(database='marketdata'| or anyone else, query='SELECT something FROM table WHERE something', debug=True | False ) 
-```
+4. Now the API is available on 0.0.0.0:8000
+
+5. You can log on the container like docker exec -it <contaomner id> bash. And run 
+the test `python3 /iriswall/mamange.py  test wall.tests.WallTests`
+
+##############################################################################
+
+OVERVIEW:
+
+1. main implementation of the logis is /iriswall/wall/views.py
+
+2. test - /iriswall/wall/tests.py
+
+3. urls - /iriswall/wall/urls.py
