@@ -1,0 +1,20 @@
+Brachnes:
+1. Data
+2. DevOps
+3. ML
+4. Python
+
+
+1.1. Spark(PS/U)
+1.2. Airflow(U)
+
+2.1 DevOps(BtA)
+2.2 AWS(ACG)
+
+3.1 Lazy() -> DPL(U) -> TF(NU)
+3.2 ZTM -> 365 -> SunDog 
+3.3 Math -> LA -> Stat  
+
+4.1 Python -> Parallel -> Deep Python
+4.2 Django(Nu) -> FastApi(U)
+4.3 Algo
